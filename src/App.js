@@ -1,6 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter as Router, Route, Redirect, Routes } from 'react-router-dom';
+import { Layout, Spin, Space } from 'antd';
 
+//this where here from the template
+//import logo from './logo.svg';
+import './App.css';
+import { Header } from 'antd/lib/layout/layout';
+
+import Home from './Home';
+
+const App = () => {
+  return(
+     <>
+      <Router>
+        <Routes>
+         <Route exact path="/">
+            <Home/>
+          </Route>
+        </Routes>
+      </Router>
+    </>
+  );
+};
+
+
+/** 
 function App() {
   return (
     <div className="App">
@@ -21,5 +45,6 @@ function App() {
     </div>
   );
 }
+*/
 
 export default App;
