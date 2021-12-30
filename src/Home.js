@@ -9,9 +9,10 @@ import './index.css';
 const Home = () => {
     return (
         <div>
-            <h1>Hi I am Eduardo and I have AIDS. This is my go fund me.</h1>
-            <p>I would like plastic surgery on my butthole becasue the AIDS caused it to fall out</p>
-            <p>I believe in living life. Butthole surgery will allow me to contunue on my journey</p>
+            <h1>EventMe.</h1>
+            <p>This is home </p>
+            <p>I need to add more shit to home to look like home </p>
+            <button>Something</button>
         </div>
     );
 }
