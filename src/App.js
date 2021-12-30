@@ -1,20 +1,24 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { Layout, Spin, Space } from 'antd';
+import Navbar from './Navbar';
+
 
 //this where here from the template
 //import logo from './logo.svg';
 import './App.css';
 import { Header } from 'antd/lib/layout/layout';
 
-import Home from './Home';
+import Home from './pages/Home';
 
 const App = () => {
   return(
      <div className="App">
-       <Routes>
-         <Route path="/" element={<Home />} />
-       </Routes>      
+       <Navbar>
+        <Routes>
+          <Route path="/" element={<Home />} />
+        </Routes>      
+       </Navbar>
      </div>
   );
 };
