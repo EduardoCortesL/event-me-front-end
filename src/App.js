@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Redirect, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import { Layout, Spin, Space } from 'antd';
 
 //this where here from the template
@@ -11,15 +11,11 @@ import Home from './Home';
 
 const App = () => {
   return(
-     <>
-      <Router>
-        <Routes>
-         <Route exact path="/">
-            <Home/>
-          </Route>
-        </Routes>
-      </Router>
-    </>
+     <div className="App">
+       <Routes>
+         <Route path="/" element={<Home />} />
+       </Routes>      
+     </div>
   );
 };
 
