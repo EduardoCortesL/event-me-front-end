@@ -1,31 +1,56 @@
 import React from 'react';
 import AuthNav from '../components/auth-nav';
-import {Nav,NavLink,Bars,NavMenu,NavBtn,NavBtnLink,} from './NavbarElements';
+//import NavBar from '../components/nav-bar';
+//import {Nav,NavLink,Bars,NavMenu,NavBtn,NavBtnLink,} from './NavbarElements';
+import "../index.css"
 
-
+/*
 const Navbar = () => {
 return (
-	<>npm
-	<Nav>
-		<Bars />
-
-		<NavMenu>
-		<NavLink to='/' >
-			Home
-		</NavLink>
-        <NavLink to='/info'>
-            Info
-        </NavLink>
-		{/* Second Nav */}
-		{/* <NavBtnLink to='/sign-in'>Sign In</NavBtnLink> */}
-		</NavMenu>
-		<NavBtn>
-        <NavBtnLink to='/signin'>Sign Up</NavBtnLink>
-		<AuthNav></AuthNav>
-		</NavBtn>
-	</Nav>
+	<>
+	<nav class="navbar navbar-expand-lg navbar-ligth fixed-top shadow-sm" id="mainNav">
+		    <NavMenu>
+		        <NavLink to='/' >
+			        Home
+		        </NavLink>
+                <NavLink to='/info'>
+                    Info
+                 </NavLink>
+		    </NavMenu>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+		                <AuthNav></AuthNav>
+		        </button>
+	</nav>
 	</>
 );
+};*/
+
+const Navbar = () => {
+    return (
+        <>
+         <nav class="navbar navbar-expand-lg navbar-light fixed-top shadow-sm" id="mainNav">
+            <div class="container px-5">
+                <a class="navbar-brand fw-bold" href="#page-top">Event-Me</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="true" aria-label="Toggle navigation">
+                    Menu
+                    <i class="bi-list"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto me-4 my-3 my-lg-0">
+                        <li class="nav-item"><a class="nav-link me-lg-3" href="#features">About</a></li>
+                        <li class="nav-item"><a class="nav-link me-lg-3" href="#download">Get Started</a></li>
+                    </ul>
+                    <button class="btn btn-primary rounded-pill px-3 mb-2 mb-lg-0" data-bs-toggle="modal" data-bs-target="#feedbackModal">
+                        <span class="d-flex align-items-center">
+                            <i class="bi-chat-text-fill me-2"></i>
+                            <AuthNav></AuthNav>
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </nav>
+        </>
+    )
 };
 
 export default Navbar;
