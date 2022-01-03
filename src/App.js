@@ -10,6 +10,7 @@ import './App.css';
 import { Header } from 'antd/lib/layout/layout';
 
 import Home from './pages/Home';
+import EventForm from './pages/eventForm';
 
 const App = () => {
   return(
@@ -17,11 +18,11 @@ const App = () => {
        <Navbar />
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/eventForm" element={<EventForm />}/>
           </Routes>
      </div>
   );
 };
-
 
 /** 
 function App() {
