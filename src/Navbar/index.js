@@ -37,8 +37,8 @@ const Navbar = () => {
                 </button>
                 <div className="collapse navbar-collapse" id="navbarResponsive">
                     <ul className="navbar-nav ms-auto me-4 my-3 my-lg-0">
-                        <li className="nav-item"><a className="nav-link me-lg-3" href="#features">About</a></li>
-                        <li className="nav-item"><a className="nav-link me-lg-3" href="#download">Get Started</a></li>
+                        <li className="nav-item"><a className="nav-link me-lg-3" href="#About">About</a></li>
+                        <li className="nav-item"><a className="nav-link me-lg-3" href="#GetStarted">Get Started</a></li>
                     </ul>
                         <span className="d-flex align-items-center">
                             <i className="bi-chat-text-fill me-2"></i>
