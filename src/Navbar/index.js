@@ -28,7 +28,7 @@ return (
 const Navbar = () => {
     return (
         <>
-         <nav className="navbar navbar-expand-lg navbar-light fixed-top shadow-sm" id="mainNav">
+         <nav className="navbar navbar-expand-lg navbar-light fixed-top shadow-sm sticky-top" id="mainNav">
             <div className="container px-5">
                 <a className="navbar-brand fw-bold" href="/">EventMe</a>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="true" aria-label="Toggle navigation">
