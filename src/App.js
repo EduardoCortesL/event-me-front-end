@@ -1,16 +1,16 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
-import { Layout, Spin, Space } from 'antd';
 import Navbar from './Navbar';
 
 
 //this where here from the template
 //import logo from './logo.svg';
 import './App.css';
-import { Header } from 'antd/lib/layout/layout';
 
 import Home from './pages/Home';
 import EventForm from './pages/eventForm';
+import MyEvents from './pages/myEvents';
+import Profile from './pages/profile';
 
 const App = () => {
   return(
@@ -19,6 +19,8 @@ const App = () => {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/eventForm" element={<EventForm />}/>
+            <Route path="/myEvents" element={<MyEvents />}/>
+            <Route path="/profile" element={<Profile />}/>
           </Routes>
      </div>
   );
