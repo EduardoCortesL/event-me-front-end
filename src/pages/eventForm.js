@@ -2,6 +2,7 @@ import React from "react";
 import { Row, Col, Form, DatePicker, Input, Layout } from "antd";
 import "antd/dist/antd.min.css";
 
+
 const { Content } = Layout;
 
 const layout = {
@@ -9,15 +10,9 @@ const layout = {
   wrapperCol: { span: 6 },
 };
 
-/*
-            <Form.Item label="Event Name" name="eventName" rules={[{required: true, message: 'Please input the name of the Event'}]}>
-            <Form.Item label="Event Date" name="eventDate">
-            <Form.Item label="Event End" name="eventEnd">
-            <Form.Item label="Event Creator" name="eventCreator">
-            <Form.Item label="Event Guests" name="eventGuest">
-*/
 
 const EventForm = () => {
+
   const onFinish = (values) => {
     console.log("Success:", values);
   };

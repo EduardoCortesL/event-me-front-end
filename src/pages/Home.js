@@ -1,4 +1,7 @@
 import React from "react";
+import AuthNav from "../components/auth-nav";
+import { Row, Col } from "antd";
+
 
 const Home = () => {
   return (
@@ -13,9 +16,11 @@ const Home = () => {
                 event.
               </p>
             </div>
-            <button className="btn btn-primary btn-lg rounded-pill">
-              Start here
-            </button>
+            <Row>
+                <Col span={4} offset={10}>
+                <AuthNav></AuthNav>
+                </Col>
+            </Row>
           </div>
         </div>
       </header>
