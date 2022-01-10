@@ -1,4 +1,4 @@
-import React, { Component, useState } from "react";
+import React, { Component, useEffect, useState } from "react";
 import { Row, Col, Form, DatePicker, Input, Layout } from "antd";
 import "antd/dist/antd.min.css";
 import axios from "axios";
@@ -16,18 +16,36 @@ const EventForm = () => {
 
   const { user,isAuthenticated, isLoading} = useAuth0();
 
-  const [creatorId, setCreator] = useState('');
+  //const [creatorId, setCreator] = useState('');
   const [name, setName] = useState('');
   const [date, setDate] = useState(new Date());
   const [end, setEnd] = useState(new Date());
   const [location, setLocation] = useState('');
 
+  /*
   const handleSubmit = () => {
     console.log(creatorId);
     console.log(name);
     console.log(date);
     console.log(end);
     console.log(location);
+  }*/
+
+
+  const handleSubmit= () => {
+    const event = {
+      creatorId: user.email,
+      name: name,
+      date: date,
+      end: end,
+      location: location,
+      guests: []
+    };
+
+    console.log(event)
+
+    axios.post("http://localhost:4000/events/add", event)
+         .then(response => console.log(response.data))
   }
 
   if (isLoading) {
@@ -66,7 +84,6 @@ const EventForm = () => {
                   <Input
                     disabled
                     placeholder={user.name}
-                    onChange={event => setCreator(event.target.value)}
                   />
                 </Form.Item>
               </Col>
