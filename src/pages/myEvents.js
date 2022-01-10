@@ -8,6 +8,10 @@ const { Content } = Layout;
 const MyEvents = () => {
   const { user, isAuthenticated, isLoading } = useAuth0();
 
+  if (isLoading) {
+    return <div>Loading ...</div>;
+  }
+
   if (isAuthenticated === false) {
     return (
       <div>
@@ -28,7 +32,7 @@ const MyEvents = () => {
   return (
     isAuthenticated && (
       <>
-        <h1>Hellow im protected so fuuuuuuck it</h1>
+        <h1>Hello {user.name}</h1>
       </>
     )
   );

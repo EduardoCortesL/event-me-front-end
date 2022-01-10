@@ -10,6 +10,10 @@ const { Content } = Layout;
 const Profile = () => {
   const { user, isAuthenticated, isLoading } = useAuth0();
 
+  if (isLoading) {
+    return <div>Loading ...</div>;
+  }
+
   if (isAuthenticated === false) {
     return (
       <div>
@@ -27,9 +31,7 @@ const Profile = () => {
     );
   }
 
-  if (isLoading) {
-    return <div>Loading ...</div>;
-  }
+ 
 
   return (
     isAuthenticated && (
