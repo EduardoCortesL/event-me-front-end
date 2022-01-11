@@ -16,21 +16,11 @@ const EventForm = () => {
 
   const { user,isAuthenticated, isLoading} = useAuth0();
 
-  //const [creatorId, setCreator] = useState('');
+
   const [name, setName] = useState('');
   const [date, setDate] = useState(new Date());
   const [end, setEnd] = useState(new Date());
   const [location, setLocation] = useState('');
-
-  /*
-  const handleSubmit = () => {
-    console.log(creatorId);
-    console.log(name);
-    console.log(date);
-    console.log(end);
-    console.log(location);
-  }*/
-
 
   const handleSubmit= () => {
     const event = {
