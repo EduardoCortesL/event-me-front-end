@@ -1,21 +1,54 @@
 import React from "react";
+import {  Card, Col,Row,Modal, Button } from "antd";
+import { useState } from "react/cjs/react.development";
 
 
-const Card = props => {
+const Cardp = (props) => {
+  const data = props.data;
 
-    const data = props.data;
+  const [isModalVisible, setIsModalVisible] = useState(false);
 
-    return (
-        <div  target="_blank" rel="noopener noreferrer"
-           className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-slate-50 hover:bg-slate-900 focus:text-slate-50 focus:bg-slate-900 ">
-            <h3 className="text-2xl font-bold">{data.name} &rarr;</h3>
-            <p>{data.date}</p>
-            <p>{data.end}</p>
-            <p>{data.location}</p>
-        </div>
-    )
-        
-}
+  const showModal = () => {
+    setIsModalVisible(true);
+  };
 
+  const handleOk = () => {
+    setIsModalVisible(false);
+  };
 
-export default Card;
+  const handleCancel = () => {
+    setIsModalVisible(false);
+  };
+
+  return (
+    <div>  
+    <Row>
+      <Col offset={2}>
+        <Card title={data.name} bordered={true}>
+          <p className="lead fw-normal text-muted mb-5">
+            Stard date: {data.date}
+          </p>
+          <p className="lead fw-normal text-muted mb-5">
+            End Date: {data.end}
+          </p>
+          <p className="lead fw-normal text-muted mb-5">
+            Location: {data.location}
+          </p>
+          <p className="lead fw-normal text-muted mb-5">
+            Guests: {data.guests}
+          <Button type="primary" onClick={showModal}>
+        Invite Guests
+      </Button>
+      <Modal title="Invite Guests" visible={isModalVisible} onOk={handleOk} onCancel={handleCancel}>
+        <p>Some contents...</p>
+      </Modal>
+      </p>
+        </Card>
+      </Col>
+      </Row>
+    </div>
+  );
+};
+
+export default Cardp;
+
