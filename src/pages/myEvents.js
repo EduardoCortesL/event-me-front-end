@@ -1,28 +1,49 @@
 import React, { useEffect } from "react";
 import { useAuth0 } from "@auth0/auth0-react";
 import AuthNav from "../components/auth-nav";
-import { Row, Col, Layout, Card } from "antd";
+import { Row, Col, Layout,Card} from "antd";
 import axios from "axios";
 import { useState } from "react/cjs/react.development";
+//import Card from "../components/card";
 
 const { Content } = Layout;
 
 const MyEvents = () => {
-  const { user, isAuthenticated, isLoading } = useAuth0();
-  const[userEvents, setUserEvents] = useState(null);
-  
 
+  const { user, isAuthenticated, isLoading } = useAuth0();
+  const [loading, setLoading] = useState(false);
+  const[userEvents, setUserEvents] = useState();
+
+  //API call to get all events 
+  /*
   useEffect(() => {
     axios.get("http://localhost:4000/events/eduardocortes@bitoverflow.org") //Figure out how to not have this hardcoded 
       .then(response => setUserEvents(response.data))
-  }, []);
+  }, []); */
+
+
+  //This prevents the hook to re-render muliple times
+ useEffect(() => {
+   fetchData();
+ }, []);
+
+ const fetchData = () => {
+   setLoading(true);
+   axios.get("http://localhost:4000/events/eduardocortes@bitoverflow.org")
+    .then((response) => {
+      setUserEvents(response.data)
+      setLoading(false);
+    })
+    .catch((error) => {
+      console.log(error);
+      setLoading(false);
+    });
+ }
 
 
   if (isLoading) {
     return <div>Loading ...</div>;
   }
-
-
 
 
   if (isAuthenticated === false) {
@@ -42,6 +63,20 @@ const MyEvents = () => {
     );
   }
 
+
+  return (
+    <>
+    { loading ? ( 
+      <div>...Data Loading</div>
+    ):(
+    <div>
+      <span> {userEvents.map(event => <div>{event.name}</div>)} </span>
+    </div>
+    )}
+    </>
+  )
+
+/*
   return ( //figure out beterr way of getting data, also need to parse or something to get rid of "" marks 
     isAuthenticated && (
       <>
@@ -77,7 +112,8 @@ const MyEvents = () => {
         </div>
       </>
     )
-  );
+  );*/
 };
+
 
 export default MyEvents;
