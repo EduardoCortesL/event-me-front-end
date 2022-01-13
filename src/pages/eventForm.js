@@ -4,6 +4,8 @@ import "antd/dist/antd.min.css";
 import axios from "axios";
 import { useAuth0, User } from "@auth0/auth0-react";
 import AuthNav from "../components/auth-nav";
+import Loading from "../components/loading";
+import LoginPrompt from "../components/privateAccess";
 
 const { Content } = Layout;
 
@@ -39,27 +41,19 @@ const EventForm = () => {
   }
 
   if (isLoading) {
-    return <div>Loading ...</div>;
+    return <div>
+      <Loading></Loading>
+    </div>;
   }
-/*
+
   if (isAuthenticated === false) {
-    return (
-      <div>
-        <Layout>
-          <Content>
-            <h1 className="display-3"> Please Log In To Create Event.</h1>
-            <Row>
-              <Col span={4} offset={10}>
-                <AuthNav></AuthNav>
-              </Col>
-            </Row>
-          </Content>
-        </Layout>
+    return <div>
+        <LoginPrompt></LoginPrompt>
       </div>
-    );
-  }*/
+  }
+
   return (
-    //isAuthenticated && (
+    isAuthenticated && (
     <div>
       <Layout>
         <Content>
@@ -175,7 +169,7 @@ const EventForm = () => {
         </Content>
       </Layout>
     </div>
-   // )
+   )
   );
 };
 

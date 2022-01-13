@@ -36,6 +36,7 @@ const Cardp = (props) => {
           </p>
           <p className="lead fw-normal text-muted mb-5">
             Guests: {data.guests}
+            <br></br>
           <Button type="primary" onClick={showModal}>
         Invite Guests
       </Button>
