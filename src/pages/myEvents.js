@@ -15,13 +15,12 @@ const MyEvents = () => {
   const { user, isAuthenticated, isLoading } = useAuth0();
   const [loading, setLoading] = useState(false);
   const [userEvents, setUserEvents] = useState();
-
-  //const user_info = user;
+ 
 
   const fetchData = () => {
     setLoading(true);
     axios
-    //.get(url_user)
+    //.get(get_url)
       .get("http://localhost:4000/events/eduardocortes@bitoverflow.org")
       .then((response) => {
         setUserEvents(response.data);
@@ -32,6 +31,7 @@ const MyEvents = () => {
         setLoading(false);
       });
   };
+  
 
   // ISSUE, ATUH0 USER NEEDS TO BE AUTHENTICATED, IN ORDER TO ACCESS IT, BUT API CALL NEEDS TO BE ON THE TOP. HOW CAN I DO IT? 
   //const url_user = url + user.email;
@@ -40,13 +40,7 @@ const MyEvents = () => {
   //This prevents the hook to re-render muliple times
   useEffect(() => {
     fetchData();
-  }, []);
-
-
-
-
-
-
+  },[]);
 
   if (isLoading) {
     return (
@@ -61,6 +55,8 @@ const MyEvents = () => {
       <LoginPrompt></LoginPrompt>
     </div>
   }
+
+   
 
   return (
     <>

@@ -55,7 +55,7 @@ const EventForm = () => {
   return (
     isAuthenticated && (
     <div>
-      <Layout>
+      <Layout style={{height:"80vh"}}>
         <Content>
           <h1 className="display-3"> Please Fill Up The Form Below</h1>
           <Form {...layout}  onFinish={handleSubmit}>

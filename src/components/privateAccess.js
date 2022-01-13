@@ -7,7 +7,7 @@ const { Content } = Layout;
 
 const LoginPrompt = () => (
     <div>
-    <Layout>
+    <Layout style={{height:"100vh"}} >
       <Content>
         <h1 className="display-3"> Please Log In To See Your Profile.</h1>
         <Row>
